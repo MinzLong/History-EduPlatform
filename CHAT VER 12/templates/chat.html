@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learn History Interactively</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">HistoryChat</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('home')">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('chat')">Chat</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('contact')">Contact</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('flashcard-container')">Flash Card</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" onclick="showSection('learn-history')">Learn History</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item" id="userEmailContainer" style="display: none;">
+                <a class="nav-link disabled" href="#" id="userEmail"></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="navLogin" onclick="showSection('login')">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#" id="navRegister" onclick="showSection('register')">Register</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-4 content-section" id="home">
+    <h2>Welcome to HistoryChat</h2>
+    <p>This interactive educational platform is designed to bring history to life. By chatting directly with simulations of historical figures, students can gain a unique perspective on history, making the learning process both engaging and informative.</p>
+   
+    <h3>About HistoryChat</h3>
+    <p>HistoryChat was created with the vision of making history lessons more interactive and accessible. By using artificial intelligence to simulate conversations with historical figures, users can ask questions and receive answers as if they were talking to the figures themselves.</p>
+
+    <h3>Educational Resources</h3>
+    <p>Browse our curated list of resources to enhance your understanding of history. These materials include books, documentaries, and websites, providing a comprehensive look at various historical periods and figures.</p>
+    <ul>
+        <li><a href="https://www.history.com">History.com</a></li>
+        <li><a href="https://www.britannica.com">Encyclopedia Britannica</a></li>
+        <li><a href="https://www.jstor.org">JSTOR for academic articles</a></li>
+    </ul>
+
+    <h3>Testimonials</h3>
+    <div class="row" id="testimonials"></div>
+
+    <div id="testimonialFormContainer" style="display:none;">
+        <h4>Send your testimonial</h4>
+        <form id="testimonialForm">
+            <div class="form-group">
+                <label for="testimonialMessage">Your Testimonial:</label>
+                <textarea id="testimonialMessage" class="form-control" rows="3" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div>
+
+    <h3>Historical Figure Gallery</h3>
+    <p>Meet some of the historical figures you can chat with on our platform.</p>
+    <div class="figure-gallery">
+        <img src="../static/art/napoleon.png" alt="Napoleon" title="Napoleon">
+        <img src="../static/art/Columbus.png" alt="Columbus" title="Columbus">
+        <img src="../static/art/Einstein.png" alt="Einstein" title="Einstein">
+        <img src="../static/art/Charles.png" alt="Charles" title="Charles">
+        <img src="../static/art/quang.png" alt="Quang" title="Quang">
+        <img src="../static/art/sun.png" alt="Sun" title="Sun">
+    </div>
+
+    <h3>Latest News</h3>
+    <p>Stay updated with the latest developments at HistoryChat.</p>
+    <ul>
+        <li>New Feature Release: Real-time Chat with Multiple Figures</li>
+        <li>Upcoming Event: Webinar on 'The Impact of Technology on Historical Education'</li>
+    </ul>
+</div>
+
+<div class="container mt-4 d-none" id="chat">
+    <h2 style="text-align:center;">Chat with Historical Figures</h2>
+    <div class="row">
+        <div class="col-md-2">
+            <div class="list-group" id="list-tab" role="tablist">
+                <a class="list-group-item list-group-item-action active" data-toggle="list" href="#list-columbus" role="tab" aria-controls="columbus" data-gif="Columbus.gif" data-art="Columbus.png">Columbus</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-charles" role="tab" aria-controls="charles" data-gif="Charles.gif" data-art="Charles.png">Charles Dickens</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-einstein" role="tab" aria-controls="einstein" data-gif="Einstein.gif" data-art="Einstein.png">Einstein</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-quang" role="tab" aria-controls="quang" data-gif="quang.gif" data-art="quang.png">Quang Trung</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-emperor" role="tab" aria-controls="emperor" data-gif="emperor.gif" data-art="emperor.png">Emperor Meiji</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-sun" role="tab" aria-controls="sun" data-gif="sun.gif" data-art="sun.png">Sun Yat-sen</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-galileo" role="tab" aria-controls="galileo" data-gif="galileo.gif" data-art="galileo.png">Galileo Galilei</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-napoleon" role="tab" aria-controls="napoleon" data-gif="Napoleon.gif" data-art="napoleon.png">Napoleon</a>
+                <a class="list-group-item list-group-item-action" data-toggle="list" href="#list-any" role="tab" aria-controls="any" data-art="huhu.jpg">Any Character</a>
+            </div>
+        </div>
+       
+        <div class="col-md-6">
+           
+            <div class="tab-content" id="nav-tabContent">  
+                <!-- Tab for Columbus -->
+                <div class="tab-pane fade show active" id="list-columbus" role="tabpanel" aria-labelledby="list-columbus">
+                    <div class="chat-messages" id="chatMessagesColumbus"></div>
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" id="messageInputColumbus" placeholder="Type a message..." aria-label="Message" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="send btn-outline-secondary" type="button" onclick="sendMessage('Columbus')">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab for Charles Dickens -->
+                <div class="tab-pane fade" id="list-charles" role="tabpanel" aria-labelledby="list-charles">
+                    <div class="chat-messages" id="chatMessagesCharles"></div>
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" placeholder="Type a message..." aria-label="Message" aria-describedby="button-addon2" id="messageInputCharles" >
+                        <div class="input-group-append">
+                            <button onclick="sendMessage('Charles')" class="send btn-outline-secondary" type="button">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab for Einstein -->
+                 
+                <div class="tab-pane fade" id="list-einstein" role="tabpanel" aria-labelledby="list-einstein">
+                    <div class="chat-messages" id="chatMessagesEinstein"></div>
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" placeholder="Type a message..." aria-label="Message" aria-describedby="button-addon2" id="messageInputEinstein">
+                        <div class="input-group-append">
+                            <button onclick="sendMessage('Einstein')" class="send btn-outline-secondary" type="button">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab for QuangTrung -->
+                <div class="tab-pane fade" id="list-quang" role="tabpanel" aria-labelledby="list-quang">
+                    <div class="chat-messages" id="chatMessagesQuang"></div>
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" placeholder="Type a message..." aria-label="Message" aria-describedby="button-addon2" id="messageInputQuang">
+                        <div class="input-group-append">
+                            <button onclick="sendMessage('Quang')" class="send btn-outline-secondary" type="button">Send</button>
+                        </div>
+                    </div>
+                </div>
+                 <!-- Tab for Emperor Meiji -->
+                <div class="tab-pane fade" id="list-emperor" role="tabpanel" aria-labelledby="list-emperor">
+                    <div class="chat-messages" id="chatMessagesEmperor"></div>
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" placeholder="Type a message..." aria-label="Message" aria-describedby="button-addon2" id="messageInputEmperor">
+                        <div class="input-group-append">
+                            <button onclick="sendMessage('Emperor')" class="send btn-outline-secondary" type="button">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab for Sun Yat-sen -->
+                <div class="tab-pane fade" id="list-sun" role="tabpanel" aria-labelledby="list-sun">
+                    <div class="chat-messages" id="chatMessagesSun"></div>
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" placeholder="Type a message..." aria-label="Message" aria-describedby="button-addon2" id="messageInputSun">
+                        <div class="input-group-append">
+                            <button onclick="sendMessage('Sun')" class=" send btn-outline-secondary" type="button">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab for Galileo Galilei -->
+                <div class="tab-pane fade" id="list-galileo" role="tabpanel" aria-labelledby="list-galileo">
+                    <div class="chat-messages" id="chatMessagesGalileo"></div>
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" placeholder="Type a message..." aria-label="Message" aria-describedby="button-addon2" id="messageInputGalileo">
+                        <div class="input-group-append">
+                            <button onclick="sendMessage('Galileo')" class=" send btn-outline-secondary" type="button">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab for Napoleon -->
+                <div class="tab-pane fade" id="list-napoleon" role="tabpanel" aria-labelledby="list-napoleon">
+                    <div class="chat-messages" id="chatMessagesNapoleon"></div>
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" placeholder="Type a message..." aria-label="Message" aria-describedby="button-addon2" id="messageInputNapoleon">
+                        <div class="input-group-append">
+                            <button onclick="sendMessage('Napoleon')" class=" send btn-outline-secondary" type="button">Send</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Tab for Any Character -->
+                <div class="tab-pane fade" id="list-any" role="tabpanel" aria-labelledby="list-any">
+                    <div class="chat-messages" id="chatMessagesAny"></div>
+                    <div class="input-group mt-3">
+                        <input type="text" class="form-control" id="customCharacterInput" placeholder="Enter character name..." aria-label="Character Name" aria-describedby="button-addon2">
+                        <input type="text" class="form-control" id="messageInputAny" placeholder="Type a message..." aria-label="Message" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="send btn-outline-secondary" type="button" onclick="sendMessage('Any'),getCharacterInfo() ">Send</button>
+                        </div>
+                    </div>
+                    <!-- Information -->
+                    <div class="container mt-4" id="get-infor">   
+                        <div id="characterInfo"></div>
+                        <ul id="relatedLinks"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div id="characterGif" class="character-gif">
+                <img id="currentGif" src="/static/art/Columbus.png" alt="Character Image" style="width:100%;">
+            </div>                
+        </div>   
+    </div>
+</div>
+
+<div class="container mt-4 d-none" id="contact">
+    <h2>Contact Us</h2>
+    <p>For more information, support, or feedback, feel free to reach out. We value your input as we strive to improve and expand our offerings.</p>
+    <p>Email: <a href="mailto:info@historychat.com">info@historychat.com</a></p>
+    
+    <div class="contact-container">
+        <h3 STYLE="text-align: center; padding-top: 40PX;">Contact Form</h3>
+        <p>Please leave a message for feedback & advice.</p>
+        <form action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="ec614938-94e3-4926-9782-81cc9be7a9f8">
+            <div class="form-group">
+                <label for="name">Name*</label>
+                <input id="name" type="text" name="name" class="form-control" placeholder="Name*" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone Number*</label>
+                <input id="phone" type="tel" name="phone" class="form-control" placeholder="Phone Number" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email*</label>
+                <input id="email" type="email" name="email" class="form-control" placeholder="Email*" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Feedbacks*</label>
+                <textarea name="message" class="form-control" placeholder="Feedbacks*" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Sent Feedback</button>
+        </form>
+    </div>
+</div>
+
+<div class="container mt-4 d-none" id="flashcard-container">
+    <h2 class="text-center">History Flashcards</h2>
+    <div class="form-inline justify-content-center">
+        <select class="form-control mb-3 mr-2" id="character-select">
+            <option value="Albert Einstein">Albert Einstein</option>
+            <option value="Napoleon Bonaparte">Napoleon Bonaparte</option>
+            <option value="Galileo Galilei">Galileo Galilei</option>
+            <option value="Sun Yat-sen">Sun Yat-sen</option>
+            <option value="Columbus Christopher">Columbus Christopher</option>
+            <option value="Emperor Meiji">Emperor Meiji</option>
+            <option value="Nguyen Hue">Quang Trung</option>
+            <option value="Charles Dickens">Charles Dickens</option>
+        </select>
+        <button class="btn btn-primary mb-3" onclick="generateFlashcard()">Generate Flashcard</button>
+    </div>
+
+    <div id="flashcard" class="flashcard mx-auto" style="display:none;" onclick="flipFlashcard()">
+        <div class="flashcard-inner">
+            <div class="flashcard-front d-flex align-items-center justify-content-center" id="flashcard-front"></div>
+            <div class="flashcard-back d-flex align-items-center justify-content-center" id="flashcard-back"></div>
+        </div>
+    </div>
+    <button id="saveFlashcard" class="btn btn-success mt-3 mx-auto" style="display:none;" onclick="saveFlashcard()">Save Flashcard</button>
+
+    <h3 class="mt-4 text-center">Create Your Own Flashcard</h3>
+    <form id="createFlashcardForm" class="mx-auto mt-3">
+        <div class="form-group">
+            <label for="create-flashcard-question">Question</label>
+            <input type="text" class="form-control" id="create-flashcard-question" required>
+        </div>
+        <div class="form-group">
+            <label for="create-flashcard-answer">Answer</label>
+            <input type="text" class="form-control" id="create-flashcard-answer" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create Flashcard</button>
+    </form>
+
+    <h3 class="text-center">Your Flashcard Collections</h3>
+    <div id="flashcard-collections" class="mt-4">
+        <!-- Flashcard collections will be appended here -->
+    </div>
+</div>
+
+<!-- Save Flashcard Modal -->
+<div class="modal fade" id="saveFlashcardModal" tabindex="-1" aria-labelledby="saveFlashcardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="saveFlashcardModalLabel">Save Flashcard</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="saveFlashcardForm">
+                    <div class="mb-3">
+                        <label for="modal-action" class="form-label">Action</label>
+                        <input type="text" class="form-control" id="modal-action" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modal-question" class="form-label">Question</label>
+                        <input type="text" class="form-control" id="modal-question" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="modal-answer" class="form-label">Answer</label>
+                        <input type="text" class="form-control" id="modal-answer" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="collection-select" class="form-label">Collection</label>
+                        <select class="form-select" id="collection-select">
+                            <option value="">-- Select a Collection --</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="new-collection-name" class="form-label">New Collection Name</label>
+                        <input type="text" class="form-control" id="new-collection-name">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Save Flashcard</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Flashcards in Collection -->
+<div class="container mt-4 d-none" id="collection-flashcards-container">
+    <h2 class="text-center" id="collection-title">Collection Title</h2>
+    <div id="collection-flashcards" class="d-flex flex-wrap justify-content-center">
+        <!-- Flashcards of the selected collection will be appended here -->
+    </div>
+</div>
+
+
+
+<div class="container mt-4 d-none" id="login">
+    <h2>Login</h2>
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="loginEmail">Email address:</label>
+            <input type="email" class="form-control" id="loginEmail" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="loginPassword">Password:</label>
+            <input type="password" class="form-control" id="loginPassword" name="password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+</div>
+
+<div class="container mt-4 d-none" id="register">
+    <h2>Register</h2>
+    <form id="registerForm">
+        <div class="form-group">
+            <label for="registerEmail">Email address:</label>
+            <input type="email" class="form-control" id="registerEmail" name="email" required>
+        </div>
+        <div class="form-group">
+            <label for="registerPassword">Password:</label>
+            <input type="password" class="form-control" id="registerPassword" name="password" required>
+        </div>
+        <div class="form-group">
+            <label for="registerConfirmPassword">Confirm Password:</label>
+            <input type="password" class="form-control" id="registerConfirmPassword" name="confirm_password" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+    </form>
+</div>
+
+    <!-- Learn HistorySection -->
+    <div class="container mt-4 d-none" id="learn-history">
+        <h2>Learn History</h2>
+        <p>Welcome to the Learn History section. Here you will find educational resources and information about various historical events and figures.</p>
+        <div class="form-group">
+            <label for="countryInput">Enter Country Name:</label>
+            <input type="text" id="countryInput" class="form-control" placeholder="e.g., Japan">
+        </div>
+        <button class="btn btn-primary" onclick="fetchHistory()">Get History</button>
+        <div id="timeline-container" class="mt-4">
+            <h3 class="timeline-header">Timeline</h3>
+            <div class="timeline" id="timeline"></div>
+        </div>
+    </div>
+    
+        <!-- Modal -->
+        <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="eventModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="eventModalLabel">Event Details</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <h4 id="modalEventYear"></h4>
+                        <p id="modalEventDescription"></p>
+                        <hr>
+                        <p id="modalEventDetail"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-info" id="viewDetailButton">View Detail</button>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+
+
+
+<footer class="bg-dark text-white text-center p-3 mt-4">
+    <p>Copyright © 2023 HistoryChat. All rights reserved.</p>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.10/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://unpkg.com/topojson@3"></script>
+<script src="../static/js/learn_history.js"></script>
+<!-- <script src="../static/js/get_infor.js"></script> -->
+<script src="../static/js/script.js"></script>
+</body>
+</html>

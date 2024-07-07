@@ -1,0 +1,517 @@
+html, body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Setting a clean, modern font */
+    height: 100%;  /* Make sure the full height of the page is used */
+    margin: 0;     /* Remove default margin */
+    display: flex;
+    flex-direction: column; /* Organize content in a vertical direction */
+}
+
+.container {
+    flex: 1;  /* Allows container to expand and push the footer down */
+}
+
+footer {
+    flex-shrink: 0; /* Prevent the footer from shrinking */
+}
+
+
+.message {
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+.user-message {
+    background-color: #007bff;
+    color: white;
+    text-align: right;
+}
+.figure-message {
+    background-color: #f8f9fa;
+    text-align: left;
+}
+.content-section {
+    margin-bottom: 50px;
+}
+.list-group-item-action {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+
+.list-group-item-action img {
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+
+.chat-messages {
+    height: 400px;
+    overflow-y: auto;
+    background-color: #e9ecef;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
+
+
+.chat-message {
+    color: #000;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+
+.input-group {
+    width: 100%;
+}
+h4.text-center {
+   
+    color: #000000;  /* Adjust color to match your design */
+    background-color: #fffefe;
+}
+
+.testimonials blockquote {
+    font-style: italic;
+    background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 1.5em 10px;
+    padding: 0.5em 10px;
+}
+
+.figure-gallery img {
+    width: 100px; /* Adjust size as needed */
+    margin: 10px;
+    border-radius: 5px;
+}
+
+.figure-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.content-section h3 {
+    margin-top: 40px;
+}
+.character-gif {
+    text-align: center; /* Center the GIF in the div */
+    padding: 10px; /* Provide some padding around the image */
+}
+.btn.speak-btn {
+    border: none;
+    background-color: white; /* Neutral background when not recording */
+    color: #6c757d; /* Grey color for the icon when not recording */
+    border-radius: 50%; /* Make it round */
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0.2, 0.2, 0.2, 0.2); /* Optional: add shadow for 3D effect */
+    transition: background-color 0.3s, color 0.3s;
+    margin-left: 10px;
+}
+
+.btn.speak-btn:hover {
+    background-color: #008197; /* Light grey background on hover */
+    color: #ffffff; /* Grey color for the icon when not recording */
+}
+
+.btn.speak-btn i {
+    font-size: 24px; /* Icon size */
+}
+
+.btn.speak-btn.recording {
+    background-color: white; /* Maintain white background when recording */
+    color: #007BFF; /* Blue icon when recording */
+}
+.send {
+    background-color: #47b5ff; /* Tomato red background */
+    color: white; /* White text */
+    padding: 0px 20px; /* Some padding */
+    border: none; /* No border */
+    border-radius: 10px; /* Circular shape */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 16px; /* Larger font size */
+    font-weight: bold; /* Bold font */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* Add shadow for 3D effect */
+    margin-left: 10px;
+    transition: 0.5s;
+    
+}
+.send:hover {
+    background-color: #001cb8; /* Darker shade of red on hover */
+}
+
+#currentGif {
+    width: 100%; /* Sets the width of the image to fill its container */
+    transition: transform 1s, box-shadow 1s; /* Smooth transition for transform and box-shadow */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5); /* Initial shadow for depth */
+    border-radius: 10px;
+}
+#currentGif:hover {
+    transform: scale(1.1); /* Scale the image up to 110% when hovered */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.75); /* Darker shadow on hover for more depth */
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.5em; /* Larger font size for impact */
+    color: #e2e2e2; /* Deep blue-grey color */
+    text-shadow: 2px 2px #bdc3c7; /* Grey shadow for a 3D effect */
+    font-weight: bold;
+    letter-spacing: 0.1em; /* Spacing out the letters */
+    background-image: linear-gradient(45deg, #3498db, #e73cd9); /* Gradient color */
+    color: transparent; /* Makes the text color transparent to show the gradient */
+    text-align: center;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border-radius: 8px; /* Rounded corners for the container */
+    margin-bottom: 20px;
+}
+
+/* contact form */
+.contact-container {
+    max-width: 600px;
+    margin: auto;
+}
+
+.contact-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.contact-container p {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.contact-container .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-container button {
+    display: block;
+    width: 100%;
+}
+
+/* testimonials */
+.testimonial-card {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.testimonial-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-message {
+    font-style: italic;
+}
+
+.testimonial-email {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Flashcard styles */
+.flashcard {
+    perspective: 1000px;
+    margin: 20px auto;
+    display: inline-block;
+    max-width: 300px; /* Ensuring max-width for flashcards */
+}
+
+.flashcard-inner {
+    width: 300px;
+    height: 200px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+    margin: 0 auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    position: relative; /* Ensure proper positioning */
+}
+
+.flashcard.flipped .flashcard-inner {
+    transform: rotateY(180deg);
+}
+
+.flashcard-front, .flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.flashcard-front {
+    background: linear-gradient(to right, #007bff, #00d4ff);
+    color: white;
+}
+
+.flashcard-back {
+    background: linear-gradient(to right, #28a745, #a8e063);
+    color: white;
+    transform: rotateY(180deg);
+}
+
+/* Form styling */
+#character-select {
+    width: 250px;
+}
+
+#flashcard-container form {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#flashcard-container h3 {
+    margin-top: 20px;
+    color: #333333;
+}
+
+#user-flashcards .flashcard {
+    margin-bottom: 15px;
+}
+
+#user-flashcards .flashcard .flashcard-inner {
+    width: 100%;
+    max-width: 200px;
+    height: 150px;
+}
+
+/* Collection styles */
+.collection {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background: #ffffff;
+}
+
+.collection-title {
+    margin-bottom: 10px;
+    font-size: 24px;
+    color: #007bff;
+}
+
+.collection-title:hover {
+    cursor: pointer;
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Flashcards in Collection */
+#collection-flashcards-container {
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+#collection-title {
+    margin-bottom: 20px;
+    font-size: 28px;
+    color: #007bff;
+}
+
+#collection-flashcards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#collection-flashcards .flashcard {
+    margin: 10px;
+}
+
+#collection-flashcards .flashcard-inner {
+    width: 300px;
+    height: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+/* Base styling for the timeline */
+.timeline {
+    position: relative;
+    max-width: 1200px; /* Adjust based on your content width */
+    margin: 20px auto;
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+
+/* Vertical line in the middle */
+.timeline::after {
+    content: '';
+    position: absolute;
+    width: 6px; /* Line thickness */
+    background-color: #ddd; /* Line color */
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -3px; /* Half of width to center it */
+    z-index: 1;
+}
+
+/* Base style for each event */
+.timeline-event {
+    background: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    padding: 10px;
+    position: relative;
+    width: 200px; /* Width of each event box */
+    text-align: center;
+    z-index: 2;
+}
+
+/* Position events correctly */
+.timeline-event:nth-child(odd) {
+    left: 340px;
+}
+
+.timeline-event:nth-child(even) {
+    left: calc(50% + 15px);
+}
+
+/* Hover effect for events */
+.timeline-event:hover {
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    transform: scale(1.05);
+    z-index: 3; /* Ensure it's above other elements */
+}
+
+/* Dots on the timeline */
+.timeline-event::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: calc(100% - 3px); /* Position it just outside of event box */
+    transform: translateY(-50%);
+    width: 10px;
+    height: 10px;
+    background-color: #fff; /* Dot color */
+    border: 3px solid #f39c12; /* Border color similar to image */
+    border-radius: 50%;
+    z-index: 2;
+}
+
+.timeline-event:nth-child(even)::before {
+    right: calc(100% - 3px); /* Position dot on the right for even elements */
+    left: auto;
+}
+
+
+@keyframes slideInFromRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.modal.slide-in-right .modal-dialog {
+    animation: slideInFromRight 0.5s ease-out;
+}
+
+@media (max-width: 600px) {
+    .timeline-event {
+        width: calc(100% - 20px); /* Full width on small screens */
+        margin: 10px auto;
+        left: 10px !important; /* Override previous left settings */
+    }
+
+    .timeline-event::before {
+        left: 50%;
+        margin-left: -5px; /* Center the dot */
+    }
+}
+
+h3.timeline-header {
+    font-family: 'Merriweather', serif; /* Custom font */
+    font-size: 36px; /* Larger font size */
+    font-weight: bold; /* Make it bold */
+    color: #4A4A4A; /* Deep gray color */
+    text-align: center; /* Center the text */
+    margin-bottom: 20px; /* Spacing below the header */
+}
+h3.timeline-header {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2); /* Shadow for depth */
+}
+h3.timeline-header::before,
+h3.timeline-header::after {
+    content: ''; /* Empty content for decoration */
+    display: block;
+    width: 70px; /* Fixed width */
+    height: 2px; /* Line thickness */
+    background: #d1a954; /* Gold color */
+    margin: 10px auto; /* Centered below and above the text */
+}
+
+h3.timeline-header::before,
+h3.timeline-header::after {
+    background: linear-gradient(90deg, rgba(209,169,84,0) 0%, rgba(209,169,84,1) 50%, rgba(209,169,84,0) 100%);
+    height: 1.5px;
+    width: 100px; /* Thinner line with gradient for elegance */
+}
+
+@media (max-width: 768px) {
+    h3.timeline-header {
+        font-size: 24px; /* Smaller font on mobile devices */
+    }
+    h3.timeline-header::before,
+    h3.timeline-header::after {
+        width: 30px; /* Shorter lines on smaller screens */
+    }
+}
+#characterInfo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 20px;
+}
+
+#characterInfo p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #555;
+}
+
+/* Styling for related links */
+#relatedLinks {
+    list-style-type: none;
+    padding: 0;
+}
+
+#relatedLinks li {
+    margin-bottom: 10px;
+}
+
+#relatedLinks a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+#relatedLinks a:hover {
+    text-decoration: underline;
+}
